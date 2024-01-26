@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { isValid } from './config'
+import { isValid } from './validate'
 
 describe('isValid', () => {
 	it('true', () => {

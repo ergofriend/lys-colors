@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { randomHex } from './color'
-import { isValid } from './config'
 import { getPairColor } from './index'
+import { isValid } from './validate'
 
 describe('getPairColor', () => {
 	it('should return a pair of colors', () => {

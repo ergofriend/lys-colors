@@ -1,5 +1,5 @@
 import { randomHex } from './color'
-import { isValid } from './config'
+import { isValid } from './validate'
 
 type Config = {
 	textColor?: string
@@ -7,7 +7,7 @@ type Config = {
 	threshold?: number
 }
 
-export const getPairColor = (config?: Config) => {
+const getPairColor = (config?: Config) => {
 	const result = {
 		textColor: config?.textColor || randomHex(),
 		backgroundColor: config?.backgroundColor || randomHex(),
@@ -24,3 +24,5 @@ export const getPairColor = (config?: Config) => {
 
 	return result
 }
+
+export { isValid, getPairColor }
