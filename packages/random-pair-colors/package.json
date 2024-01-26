@@ -3,9 +3,7 @@
 	"version": "1.0.0",
 	"author": "ergofriend",
 	"type": "module",
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"main": "./dist/main.umd.cjs",
 	"module": "./dist/main.js",
 	"exports": {
@@ -15,6 +13,7 @@
 		}
 	},
 	"scripts": {
+		"preview": "deno run --unstable-sloppy-imports ./scripts/preview.ts",
 		"build": "tsc && vite build",
 		"prepare": "npm run build"
 	},
