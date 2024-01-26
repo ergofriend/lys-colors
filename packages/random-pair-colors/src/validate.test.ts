@@ -1,10 +1,10 @@
 import { describe, expect, it } from 'vitest'
 
-import { isValid } from './validate'
+import { isValidRandomPairColor } from './validate'
 
-describe('isValid', () => {
+describe('isValidRandomPairColor', () => {
 	it('true', () => {
-		const result = isValid(
+		const result = isValidRandomPairColor(
 			{
 				textColor: '#32f339',
 				backgroundColor: '#3a2de8',
@@ -15,7 +15,7 @@ describe('isValid', () => {
 	})
 
 	it('false', () => {
-		const result = isValid(
+		const result = isValidRandomPairColor(
 			{
 				textColor: '#32f339',
 				backgroundColor: '#32f339',

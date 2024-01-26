@@ -1,10 +1,13 @@
-import { getPairColor } from '../src/index.ts'
+import { generateRandomPairColor } from '../src/index.ts'
 
 for (let i = 0; i < 10; i++) {
-	const result = getPairColor({ backgroundColor: '#3f2697' })
+	const result = generateRandomPairColor({
+		backgroundColor: '#3f2697',
+		threshold: 70,
+	})
 
 	console.log(
-		'%cHello Deno !!!',
+		`%cHello Deno ${result.textColor}(${result.backgroundColor}) !!!`,
 		`color: ${result.textColor}; background-color: ${result.backgroundColor}`,
 	)
 }

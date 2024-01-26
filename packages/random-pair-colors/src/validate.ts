@@ -8,7 +8,7 @@ type Config = {
 	backgroundColor: string
 }
 
-export const isValid = (
+export const isValidRandomPairColor = (
 	{ textColor, backgroundColor }: Config,
 	threshold = defaultThreshold,
 ) => {
