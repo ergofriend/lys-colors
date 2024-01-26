@@ -1,20 +1,20 @@
 import { describe, expect, it } from 'vitest'
 import { randomHex } from './color'
-import { getPairColor } from './index'
-import { isValid } from './validate'
+import { generateRandomPairColor } from './index'
+import { isValidRandomPairColor } from './validate'
 
-describe('getPairColor', () => {
+describe('generateRandomPairColor', () => {
 	it('should return a pair of colors', () => {
-		const result = getPairColor()
-		expect(isValid(result)).toBe(true)
+		const result = generateRandomPairColor()
+		expect(isValidRandomPairColor(result)).toBe(true)
 	})
 
 	it('should return a pair of colors with custom config', () => {
 		const textColor = randomHex()
-		const result = getPairColor({
+		const result = generateRandomPairColor({
 			textColor,
 		})
 		expect(result.textColor).toBe(textColor)
-		expect(isValid(result)).toBe(true)
+		expect(isValidRandomPairColor(result)).toBe(true)
 	})
 })
