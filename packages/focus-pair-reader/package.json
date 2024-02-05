@@ -1,0 +1,22 @@
+{
+	"name": "@lys-42/focus-pair-reader",
+	"private": true,
+	"version": "1.0.0",
+	"author": "ergofriend",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@lys-42/random-pair-colors": "file:../random-pair-colors",
+		"body-scroll-lock": "^4.0.0-beta.0",
+		"lit": "^3.1.0"
+	},
+	"devDependencies": {
+		"@types/body-scroll-lock": "^3.1.2",
+		"typescript": "^5.2.2",
+		"vite": "^5.0.8"
+	}
+}
