@@ -12,4 +12,6 @@ npm -w @lys-42/focus-pair-reader run build
 npm -w @lys-42/focus-pair-reader run dev
 ```
 
+http://localhost:5173/
+
 ![screenshot.png](./screenshot.png)
