@@ -1,17 +1,18 @@
 {
 	"name": "lys-42",
 	"private": true,
-	"workspaces": [
-		"packages/*"
-	],
+	"workspaces": ["packages/*"],
 	"devDependencies": {
 		"@biomejs/biome": "^1.5.3",
+		"lefthook": "^1.6.1",
 		"vitest": "^1.2.1"
 	},
 	"scripts": {
-		"lint": "biome lint -- apply .",
-		"format": "biome format . --write",
-		"check": "biome check --apply .",
-		"test": "vitest"
+		"biome:ci": "biome ci .",
+		"biome:lint": "biome lint -- apply .",
+		"biome:format": "biome format . --write",
+		"biome:check": "biome check --apply .",
+		"test": "vitest",
+		"postinstall": "lefthook install"
 	}
 }
