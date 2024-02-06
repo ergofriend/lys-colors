@@ -1,0 +1,7 @@
+random-pair-colors:
+- changed-files:
+  - any-glob-to-any-file: packages/random-pair-colors/**
+
+focus-pair-reader:
+- changed-files:
+  - any-glob-to-any-file: packages/focus-pair-reader/**
