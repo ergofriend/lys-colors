@@ -8,6 +8,7 @@
 		"vitest": "^1.2.1"
 	},
 	"scripts": {
+		"ci": "biome ci .",
 		"lint": "biome lint -- apply .",
 		"format": "biome format . --write",
 		"check": "biome check --apply .",

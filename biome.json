@@ -13,7 +13,9 @@
 		"enabled": true,
 		"rules": {
 			"recommended": true
-		},
+		}
+	},
+	"files": {
 		"ignore": [
 			"*.d.ts",
 			"dist/**/*",
