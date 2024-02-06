@@ -14,8 +14,7 @@
 	},
 	"scripts": {
 		"preview": "deno run --unstable-sloppy-imports ./scripts/preview.ts",
-		"build": "tsc && vite build",
-		"prepare": "npm run build"
+		"build": "tsc && vite build"
 	},
 	"devDependencies": {
 		"rollup-plugin-terser": "^7.0.2",
