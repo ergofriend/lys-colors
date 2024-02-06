@@ -1,0 +1,27 @@
+pre {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+pre > code {
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  padding: 16px;
+  border-radius: 0;
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  overflow-x: auto;
+  margin: 0;
+}
+
+article.demo-fill {
+  border: none;
+}
+
+focus-pair-reader::part(target) {
+  border: none;
+  height: 100%;
+}

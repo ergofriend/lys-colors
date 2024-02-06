@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@lys-42/focus-pair-reader</title>
+    <link rel="stylesheet" href="./tacit-css.min.css" />
+    <link rel="stylesheet" href="./src/index.css" />
+    <script type="module" src="./src/focus-pair-reader.ts"></script>
+  </head>
+  <body>
+    <h1>
+      @lys-42/focus-pair-reader
+    </h1>
+
+    <h2>
+      mode="fill"
+    </h2>
+    <focus-pair-reader>
+      <article class="demo-fill">
+        <h1>サンプルエントリー</h1>
+        <h2>段落</h2>
+        <p>
+          あのイーハトヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモーリオ市、郊外のぎらぎら光る草の波。
+        </p>
+        <h2>段落</h2>
+        <p>
+          あのイーハトヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモーリオ市、郊外のぎらぎら光る草の波。
+        </p>
+      </article>
+    </focus-pair-reader>
+
+    <br />
+
+    <h2>
+      mode="modal" <focus-pair-reader target="#target-root" mode="modal" external-link='["./tacit-css.min.css"]' />
+    </h2>
+    <article id="target-root">
+      <h1 class="entry-title">サンプルエントリー</h1>
+      <h2>段落</h2>
+      <p>
+        あのイーハトヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモーリオ市、郊外のぎらぎら光る草の波。
+      </p>
+      <h2>段落</h2>
+      <p>
+        あのイーハトヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモーリオ市、郊外のぎらぎら光る草の波。
+      </p>
+    </article>
+  </body>
+</html>
