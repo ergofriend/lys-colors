@@ -8,10 +8,10 @@
 		"vitest": "^1.2.1"
 	},
 	"scripts": {
-		"ci": "biome ci .",
-		"lint": "biome lint -- apply .",
-		"format": "biome format . --write",
-		"check": "biome check --apply .",
+		"biome:ci": "biome ci .",
+		"biome:lint": "biome lint -- apply .",
+		"biome:format": "biome format . --write",
+		"biome:check": "biome check --apply .",
 		"test": "vitest",
 		"postinstall": "lefthook install"
 	}
