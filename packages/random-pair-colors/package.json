@@ -24,6 +24,7 @@
 	"devDependencies": {
 		"rollup-plugin-terser": "^7.0.2",
 		"typescript": "^5.3.3",
+		"vite": "^5.1.1",
 		"vite-plugin-dts": "^3.7.2"
 	},
 	"dependencies": {
