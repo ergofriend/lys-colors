@@ -1,15 +1,15 @@
-# @lys-42/focus-pair-reader
+# @ergofriend/focus-pair-reader
 
 ### build
 
 ```sh
-npm -w @lys-42/focus-pair-reader run build
+npm -w @ergofriend/focus-pair-reader run build
 ```
 
 ### dev
 
 ```sh
-npm -w @lys-42/focus-pair-reader run dev
+npm -w @ergofriend/focus-pair-reader run dev
 ```
 
 http://localhost:5173/

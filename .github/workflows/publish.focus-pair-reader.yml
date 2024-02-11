@@ -1,4 +1,4 @@
-name: Publish Package to @lys-42/focus-pair-reader
+name: Publish Package to @ergofriend/focus-pair-reader
 
 on:
   workflow_dispatch:
@@ -18,7 +18,7 @@ jobs:
           node-version: 18
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
-      - run: npm -w @lys-42/focus-pair-reader run build
-      - run: npm -w @lys-42/focus-pair-reader publish
+      - run: npm -w @ergofriend/focus-pair-reader run build
+      - run: npm -w @ergofriend/focus-pair-reader publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

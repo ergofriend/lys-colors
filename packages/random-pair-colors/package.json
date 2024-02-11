@@ -1,5 +1,5 @@
 {
-	"name": "@lys-42/random-pair-colors",
+	"name": "@ergofriend/random-pair-colors",
 	"version": "0.0.1",
 	"author": "ergofriend",
 	"description": "A simple library to generate Computational Theming Colors.",

@@ -1,5 +1,5 @@
 {
-	"name": "@lys-42/focus-pair-reader",
+	"name": "@ergofriend/focus-pair-reader",
 	"version": "0.0.1",
 	"author": "ergofriend",
 	"description": "A Custom Element that applies a pair of colors to the focused element.",
@@ -17,7 +17,7 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"@lys-42/random-pair-colors": "file:../random-pair-colors",
+		"@ergofriend/random-pair-colors": "file:../random-pair-colors",
 		"body-scroll-lock": "^4.0.0-beta.0",
 		"lit": "^3.1.0"
 	},

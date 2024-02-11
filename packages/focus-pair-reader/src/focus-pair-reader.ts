@@ -1,4 +1,4 @@
-import { generateRandomPairColor } from '@lys-42/random-pair-colors'
+import { generateRandomPairColor } from '@ergofriend/random-pair-colors'
 import {
 	clearAllBodyScrollLocks,
 	disableBodyScroll,
