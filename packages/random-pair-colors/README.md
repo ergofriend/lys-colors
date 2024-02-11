@@ -1,11 +1,11 @@
-# @lys-42/random-pair-colors
+# @ergofriend/random-pair-colors
 
 ```sh
-npm install @lys-42/random-pair-colors
+npm install @ergofriend/random-pair-colors
 ```
 
 ```typescript
-import { generateRandomPairColor } from '@lys-42/random-pair-colors'
+import { generateRandomPairColor } from '@ergofriend/random-pair-colors'
 
 const result2 = generateRandomPairColor({ backgroundColor: '#3f2697', threshold: 70 })
 console.log(result2.textColor, result2.backgroundColor) // #82fce9, #3f2697
@@ -21,11 +21,11 @@ console.log(result2.textColor, result2.backgroundColor) // #82fce9, #3f2697
 ### preview
 
 ```sh
-npm -w @lys-42/random-pair-colors run preview
+npm -w @ergofriend/random-pair-colors run preview
 ```  
 
 ### build
 
 ```sh
-npm -w @lys-42/random-pair-colors run build  
+npm -w @ergofriend/random-pair-colors run build  
 ```

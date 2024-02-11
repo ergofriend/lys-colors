@@ -1,4 +1,4 @@
-name: Publish Package to @lys-42/random-pair-colors
+name: Publish Package to @ergofriend/random-pair-colors
 
 on:
   workflow_dispatch:
@@ -18,7 +18,7 @@ jobs:
           node-version: 18
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
-      - run: npm -w @lys-42/random-pair-colors run build
-      - run: npm -w @lys-42/random-pair-colors publish
+      - run: npm -w @ergofriend/random-pair-colors run build
+      - run: npm -w @ergofriend/random-pair-colors publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

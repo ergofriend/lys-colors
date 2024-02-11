@@ -9,7 +9,7 @@ export default defineConfig({
 		emptyOutDir: true,
 		lib: {
 			entry: 'src/index.ts',
-			name: '@lys-42/random-pair-colors',
+			name: '@ergofriend/random-pair-colors',
 			fileName: 'main',
 		},
 	},
