@@ -12,5 +12,6 @@ export default defineConfig(({ mode }) => {
 				external: mode === 'production' ? '' : /^lit/,
 			},
 		},
+		publicDir: mode === 'production' ? false : 'public',
 	}
 })
