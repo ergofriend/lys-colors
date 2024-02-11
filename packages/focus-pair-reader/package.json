@@ -1,6 +1,6 @@
 {
 	"name": "@lys-42/focus-pair-reader",
-	"version": "1.0.0",
+	"version": "0.0.1",
 	"author": "ergofriend",
 	"description": "A Custom Element that applies a pair of colors to the focused element.",
 	"repository": {
