@@ -29,5 +29,8 @@
 	"dependencies": {
 		"apca-w3": "^0.1.9",
 		"colorparsley": "^0.1.8"
+	},
+	"resolutions": {
+		"rollup": "npm:@rollup/wasm-node"
 	}
 }
