@@ -1,0 +1,6 @@
+_extends: .github/release-drafter.base.yml
+name-template: focus-pair-reader@$RESOLVED_VERSION
+tag-template: focus-pair-reader@$RESOLVED_VERSION
+tag-prefix: focus-pair-reader@
+include-paths:
+  - "packages/focus-pair-reader/"
