@@ -17,7 +17,7 @@ jobs:
         with:
           mode: exactly
           count: 1
-          labels: "semver:patch, semver:minor, semver:major"
+          labels: "semver:patch, semver:minor, semver:major, semver:ignore"
       - name: Category label
         uses: mheap/github-action-required-labels@v5
         with:
