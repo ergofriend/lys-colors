@@ -1,9 +1,16 @@
 {
 	"name": "@lys-42/focus-pair-reader",
-	"private": true,
 	"version": "1.0.0",
 	"author": "ergofriend",
+	"description": "A Custom Element that applies a pair of colors to the focused element.",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ergofriend/LYS-42.git"
+	},
 	"type": "module",
+	"files": ["dist"],
+	"main": "dist/focus-pair-reader.js",
+	"module": "dist/focus-pair-reader.js",
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",

@@ -2,6 +2,11 @@
 	"name": "@lys-42/random-pair-colors",
 	"version": "1.0.0",
 	"author": "ergofriend",
+	"description": "A simple library to generate Computational Theming Colors.",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ergofriend/LYS-42.git"
+	},
 	"type": "module",
 	"files": ["dist"],
 	"main": "./dist/main.umd.cjs",
