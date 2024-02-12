@@ -19,6 +19,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
       - run: npm -w @ergofriend/focus-pair-reader run build
-      - run: npm -w @ergofriend/focus-pair-reader publish
+      - run: npm -w @ergofriend/focus-pair-reader publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -19,6 +19,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
       - run: npm -w @ergofriend/random-pair-colors run build
-      - run: npm -w @ergofriend/random-pair-colors publish
+      - run: npm -w @ergofriend/random-pair-colors publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
