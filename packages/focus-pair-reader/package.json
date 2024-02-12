@@ -1,6 +1,6 @@
 {
 	"name": "@ergofriend/focus-pair-reader",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"author": "ergofriend",
 	"description": "A Custom Element that applies a pair of colors to the focused element.",
 	"repository": {
