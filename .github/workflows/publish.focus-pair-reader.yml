@@ -8,6 +8,9 @@ on:
     tags:
       - 'focus-pair-reader@*'
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
