@@ -27,7 +27,7 @@ runs:
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-     - name: Bump version
+    - name: Bump version
       shell: bash
       run: npm -w @ergofriend/${{ inputs.package }} version ${{ steps.new.outputs.version }} --no-git-tag-version
     - name: Commit
