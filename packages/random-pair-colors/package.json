@@ -17,6 +17,16 @@
 			"require": "./dist/main.umd.cjs"
 		}
 	},
+	"license": "MIT",
+	"keywords": [
+		"Computational Theming",
+		"apca-w3",
+		"colorparsley",
+		"computational",
+		"a11y",
+		"accessibility",
+		"color"
+	],
 	"scripts": {
 		"preview": "deno run --unstable-sloppy-imports ./scripts/preview.ts",
 		"build": "tsc && vite build"
