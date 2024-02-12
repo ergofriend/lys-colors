@@ -18,6 +18,7 @@
 		"postinstall": "lefthook install"
 	},
 	"optionalDependencies": {
+		"@biomejs/cli-linux-x64": "^1.5.3",
 		"lefthook-linux-x64": "^1.6.1"
 	}
 }
