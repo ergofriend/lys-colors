@@ -1,6 +1,6 @@
 {
 	"name": "@ergofriend/random-pair-colors",
-	"version": "0.0.1",
+	"version": "0.1.12",
 	"author": "ergofriend",
 	"description": "A simple library to generate Computational Theming Colors.",
 	"repository": {
