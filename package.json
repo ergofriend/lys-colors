@@ -1,7 +1,9 @@
 {
 	"name": "lys-42",
 	"private": true,
-	"workspaces": ["packages/*"],
+	"workspaces": [
+		"packages/*"
+	],
 	"devDependencies": {
 		"@biomejs/biome": "^1.5.3",
 		"lefthook": "^1.6.1",
@@ -14,5 +16,8 @@
 		"biome:check": "biome check --apply .",
 		"test": "vitest",
 		"postinstall": "lefthook install"
+	},
+	"optionalDependencies": {
+		"lefthook-linux-x64": "^1.6.1"
 	}
 }
