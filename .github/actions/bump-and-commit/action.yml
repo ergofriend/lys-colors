@@ -1,0 +1,29 @@
+name: "Bump version and commit"
+inputs:
+  package:
+    required: true
+  tag:
+    required: true
+outputs:
+  version:
+    value: ${{ steps.new.outputs.version }}
+
+runs:
+  using: "composite"
+  steps:
+    - id: current
+      name: Current version from package.json
+      run: echo "version=$(jq -r .version < packages/${{ inputs.package }}/package.json)" >> $GITHUB_OUTPUT
+    - id: new
+      name: New version from tag
+      run: echo "${{ inputs.tag }}" | jq '.split("@")[1]' | echo "version=$1 >> $GITHUB_OUTPUT"
+    - name: Check version
+      run: echo "[${{ inputs.package }}] from ${{ steps.current.outputs.version }} to ${{ steps.new.outputs.version }}"
+    - name: Setup Git
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+    - name: Commit
+      run: |
+        git commit -am "Bump version to ${{ steps.new.outputs.version }}"
+        git push

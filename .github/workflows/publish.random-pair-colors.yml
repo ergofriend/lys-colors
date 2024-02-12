@@ -17,6 +17,10 @@ jobs:
         with:
           node-version: 18
           registry-url: 'https://registry.npmjs.org'
+      - uses: ./.github/actions/bump-and-commit
+        with:
+          package: 'random-pair-colors'
+          tag: ${{github.ref_name}}
       - run: npm ci
       - run: npm -w @ergofriend/random-pair-colors run build
       - run: npm -w @ergofriend/random-pair-colors publish --access=public
