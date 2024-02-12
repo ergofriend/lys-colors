@@ -30,6 +30,9 @@ runs:
     - name: Bump version
       shell: bash
       run: npm -w @ergofriend/${{ inputs.package }} version ${{ steps.new.outputs.version }} --no-git-tag-version
+    - name: Check branch
+      shell: bash
+      run: git branch --contains
     - name: Commit
       shell: bash
       run: |
