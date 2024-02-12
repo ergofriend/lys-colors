@@ -23,14 +23,17 @@ runs:
       shell: bash
       run: echo "[${{ inputs.package }}] from ${{ steps.current.outputs.version }} to ${{ steps.new.outputs.version }}"
     - name: Setup Git
+      if: ${{ steps.current.outputs.version != steps.new.outputs.version }}
       shell: bash
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
     - name: Bump version
+      if: ${{ steps.current.outputs.version != steps.new.outputs.version }}
       shell: bash
       run: npm -w @ergofriend/${{ inputs.package }} version ${{ steps.new.outputs.version }} --no-git-tag-version
     - name: Commit
+      if: ${{ steps.current.outputs.version != steps.new.outputs.version }}
       shell: bash
       run: |
         git commit -am ":robot: Bump version to ${{ steps.new.outputs.version }}"
