@@ -8,7 +8,9 @@
 		"url": "git+https://github.com/ergofriend/LYS-42.git"
 	},
 	"type": "module",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "./dist/main.umd.cjs",
 	"module": "./dist/main.js",
 	"exports": {
@@ -33,5 +35,8 @@
 	},
 	"resolutions": {
 		"rollup": "npm:@rollup/wasm-node"
+	},
+	"optionalDependencies": {
+		"@rollup/rollup-linux-x64-gnu": "^4.10.0"
 	}
 }
