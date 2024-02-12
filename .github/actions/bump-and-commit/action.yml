@@ -30,11 +30,8 @@ runs:
     - name: Bump version
       shell: bash
       run: npm -w @ergofriend/${{ inputs.package }} version ${{ steps.new.outputs.version }} --no-git-tag-version
-    - name: Check branch
-      shell: bash
-      run: git branch --contains
     - name: Commit
       shell: bash
       run: |
         git commit -am ":robot: Bump version to ${{ steps.new.outputs.version }}"
-        git push origin main
+        git push origin HEAD:main
