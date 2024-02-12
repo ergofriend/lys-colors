@@ -33,5 +33,5 @@ runs:
     - name: Commit
       shell: bash
       run: |
-        git commit -am "Bump version to ${{ steps.new.outputs.version }}"
-        git push
+        git commit -am ":robot: Bump version to ${{ steps.new.outputs.version }}"
+        git push origin main
