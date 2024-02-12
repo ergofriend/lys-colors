@@ -12,6 +12,15 @@
 	"main": "dist/focus-pair-reader.js",
 	"module": "dist/focus-pair-reader.js",
 	"license": "MIT",
+	"keywords": [
+		"Computational Theming",
+		"apca-w3",
+		"colorparsley",
+		"computational",
+		"a11y",
+		"accessibility",
+		"color"
+	],
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
