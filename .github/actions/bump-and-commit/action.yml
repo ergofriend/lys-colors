@@ -13,17 +13,22 @@ runs:
   steps:
     - id: current
       name: Current version from package.json
+      shell: bash
       run: echo "version=$(jq -r .version < packages/${{ inputs.package }}/package.json)" >> $GITHUB_OUTPUT
     - id: new
       name: New version from tag
+      shell: bash
       run: echo "${{ inputs.tag }}" | jq '.split("@")[1]' | echo "version=$1 >> $GITHUB_OUTPUT"
     - name: Check version
+      shell: bash
       run: echo "[${{ inputs.package }}] from ${{ steps.current.outputs.version }} to ${{ steps.new.outputs.version }}"
     - name: Setup Git
+      shell: bash
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
     - name: Commit
+      shell: bash
       run: |
         git commit -am "Bump version to ${{ steps.new.outputs.version }}"
         git push
