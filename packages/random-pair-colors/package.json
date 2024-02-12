@@ -17,6 +17,7 @@
 			"require": "./dist/main.umd.cjs"
 		}
 	},
+	"license": "MIT",
 	"scripts": {
 		"preview": "deno run --unstable-sloppy-imports ./scripts/preview.ts",
 		"build": "tsc && vite build"

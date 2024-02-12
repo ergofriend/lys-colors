@@ -11,6 +11,7 @@
 	"files": ["dist"],
 	"main": "dist/focus-pair-reader.js",
 	"module": "dist/focus-pair-reader.js",
+	"license": "MIT",
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
