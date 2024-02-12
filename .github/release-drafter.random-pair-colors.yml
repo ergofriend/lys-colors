@@ -1,4 +1,4 @@
-_extends: LYS-42:.github/release-drafter.base.yml
+_extends: lys-colors:.github/release-drafter.base.yml
 name-template: random-pair-colors@$RESOLVED_VERSION
 tag-template: random-pair-colors@$RESOLVED_VERSION
 tag-prefix: random-pair-colors@

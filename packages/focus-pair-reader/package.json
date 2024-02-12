@@ -5,7 +5,7 @@
 	"description": "A Custom Element that applies a pair of colors to the focused element.",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ergofriend/LYS-42.git"
+		"url": "git+https://github.com/ergofriend/lys-colors.git"
 	},
 	"type": "module",
 	"files": ["dist"],
