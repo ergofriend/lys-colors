@@ -14,8 +14,14 @@
 	"types": "./dist/main.d.ts",
 	"exports": {
 		".": {
-			"import": "./dist/main.js",
-			"require": "./dist/main.umd.cjs"
+			"import": {
+				"types": "./dist/main.d.ts",
+				"default": "./dist/main.js"
+			},
+			"require": {
+				"types": "./dist/main.d.ts",
+				"default": "./dist/main.umd.cjs"
+			}
 		}
 	},
 	"license": "MIT",
@@ -30,7 +36,7 @@
 	],
 	"scripts": {
 		"preview": "deno run --unstable-sloppy-imports ./scripts/preview.ts",
-		"build": "tsc && vite build"
+		"build": "tsc --noEmit && vite build"
 	},
 	"devDependencies": {
 		"@rollup/plugin-terser": "^0.4.4",
