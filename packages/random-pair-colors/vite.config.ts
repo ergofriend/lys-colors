@@ -1,4 +1,4 @@
-import { terser } from 'rollup-plugin-terser'
+import terser from '@rollup/plugin-terser'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 
@@ -13,9 +13,5 @@ export default defineConfig({
 			fileName: 'main',
 		},
 	},
-	plugins: [
-		// @ts-expect-error
-		terser(),
-		dts({ rollupTypes: true }),
-	],
+	plugins: [terser(), dts({ rollupTypes: true })],
 })

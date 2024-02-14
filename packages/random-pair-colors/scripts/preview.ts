@@ -1,4 +1,4 @@
-import { generateRandomPairColor } from '../src/index.ts'
+import { generateRandomPairColor } from '../src/index'
 
 for (let i = 0; i < 10; i++) {
 	const result = generateRandomPairColor({

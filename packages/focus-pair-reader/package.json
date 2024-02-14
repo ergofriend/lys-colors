@@ -8,9 +8,7 @@
 		"url": "git+https://github.com/ergofriend/lys-colors.git"
 	},
 	"type": "module",
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"main": "dist/focus-pair-reader.js",
 	"module": "dist/focus-pair-reader.js",
 	"license": "MIT",
@@ -24,9 +22,10 @@
 		"color"
 	],
 	"scripts": {
+		"preview": "vite preview",
 		"dev": "vite",
-		"build": "tsc && vite build",
-		"preview": "vite preview"
+		"build": "tsc --noEmit && vite build",
+		"postinstall": "npm -w @ergofriend/random-pair-colors run build"
 	},
 	"dependencies": {
 		"@ergofriend/random-pair-colors": "file:../random-pair-colors",
