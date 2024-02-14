@@ -9,9 +9,9 @@ import { customElement, property, state } from 'lit/decorators.js'
 import { styleMap } from 'lit/directives/style-map.js'
 import { unsafeSVG } from 'lit/directives/unsafe-svg.js'
 
-import bookIcon from './assets/book-open.svg?raw'
-import closeBoxIcon from './assets/close-box.svg?raw'
-import randomIcon from './assets/switch.svg?raw'
+import bookIcon from 'pixelarticons/svg/book-open.svg?raw'
+import closeBoxIcon from 'pixelarticons/svg/close-box.svg?raw'
+import randomIcon from 'pixelarticons/svg/switch.svg?raw'
 
 type Mode = 'fill' | 'modal'
 
