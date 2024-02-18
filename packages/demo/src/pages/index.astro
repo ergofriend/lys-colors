@@ -1,0 +1,30 @@
+---
+import '@fontsource-variable/m-plus-1';
+import About from "../components/about.md";
+import RandomPairColors from "../components/random-pair-colors.md";
+import FocusPairReader from "../components/focus-pair-reader.astro";
+---
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script type="module" src="https://unpkg.com/@ergofriend/focus-pair-reader"
+    ></script>
+    <link rel="stylesheet" href="/lys-colors/tacit-css.min.css" />
+  </head>
+  <body>
+    <About />
+    <RandomPairColors />
+    <FocusPairReader />
+  </body>
+</html>
+<style is:global>
+  body {
+    font-family: 'M PLUS 1 Variable', sans-serif;
+    background-color: #202124;
+    color: white;
+  }
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+</style>

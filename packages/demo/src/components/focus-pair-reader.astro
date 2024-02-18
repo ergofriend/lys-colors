@@ -1,0 +1,49 @@
+<html>
+  <h2>focus-pair-reader</h2>
+  <h3>mode="fill"</h3>
+  <focus-pair-reader>
+    <article class="demo-fill">
+      <h1>サンプルエントリー</h1>
+      <h2>段落</h2>
+      <p>
+        あのイーハトヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモーリオ市、郊外のぎらぎら光る草の波。
+      </p>
+      <h2>段落</h2>
+      <p>
+        あのイーハトヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモーリオ市、郊外のぎらぎら光る草の波。
+      </p>
+    </article>
+  </focus-pair-reader>
+
+  <br />
+
+  <h3>
+    mode="modal" <focus-pair-reader
+      target="#target-root"
+      mode="modal"
+      external-link='["/lys-colors/tacit-css.min.css"]'></focus-pair-reader>
+  </h3>
+  <article id="target-root">
+    <h1 class="entry-title">サンプルエントリー</h1>
+    <h2>段落</h2>
+    <p>
+      あのイーハトヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモーリオ市、郊外のぎらぎら光る草の波。
+    </p>
+    <h2>段落</h2>
+    <p>
+      あのイーハトヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモーリオ市、郊外のぎらぎら光る草の波。
+    </p>
+  </article>
+
+
+  <style>
+    article.demo-fill {
+      border: none;
+    }
+
+    focus-pair-reader::part(target) {
+      border: none;
+      height: 100%;
+    }
+  </style>
+</html>
