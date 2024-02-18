@@ -1,7 +1,9 @@
 {
 	"name": "lys-colors",
 	"private": true,
-	"workspaces": ["packages/*"],
+	"workspaces": [
+		"packages/*"
+	],
 	"devDependencies": {
 		"@biomejs/biome": "^1.5.3",
 		"lefthook": "^1.6.1",
