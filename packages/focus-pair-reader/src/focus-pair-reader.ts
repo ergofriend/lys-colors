@@ -34,6 +34,10 @@ export class CustomComponent extends LitElement {
 	@property()
 	target = 'target-root'
 
+	// For fill mode only
+	@property({ type: 'Boolean', attribute: 'no-control' })
+	noControl = false
+
 	@property({ type: Array, attribute: 'external-link' })
 	externalLinks: string[] = []
 
@@ -128,7 +132,9 @@ export class CustomComponent extends LitElement {
 						class="container transitions"
 						style=${styleMap(this._theme)}
 						>
-						<div class="floating">
+						<div class="floating" style=${styleMap({
+							display: this.noControl ? 'none' : 'block',
+						})}>
 							<button
 								part="random-button"
 								class="fill-box radius floating"
