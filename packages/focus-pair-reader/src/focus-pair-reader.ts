@@ -4,7 +4,7 @@ import {
 	disableBodyScroll,
 	enableBodyScroll,
 } from 'body-scroll-lock'
-import { LitElement, css, html } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { styleMap } from 'lit/directives/style-map.js'
 import { unsafeSVG } from 'lit/directives/unsafe-svg.js'
@@ -12,6 +12,8 @@ import { unsafeSVG } from 'lit/directives/unsafe-svg.js'
 import bookIcon from 'pixelarticons/svg/book-open.svg?raw'
 import closeBoxIcon from 'pixelarticons/svg/close-box.svg?raw'
 import randomIcon from 'pixelarticons/svg/switch.svg?raw'
+
+import style from './style'
 
 type Mode = 'fill' | 'modal'
 
@@ -31,6 +33,10 @@ export class CustomComponent extends LitElement {
 
 	@property()
 	target = 'target-root'
+
+	// For fill mode only
+	@property({ type: 'Boolean', attribute: 'no-control' })
+	noControl = false
 
 	@property({ type: Array, attribute: 'external-link' })
 	externalLinks: string[] = []
@@ -65,32 +71,7 @@ export class CustomComponent extends LitElement {
 		}
 	}
 
-	static styles = css`
-	dialog,
-	::backdrop {
-		opacity: 0;
-		transition: opacity 200ms, display 200ms allow-discrete, overlay 200ms allow-discrete;
-	}
-	
-	dialog[open],
-	dialog[open]::backdrop {
-		opacity: 1;
-	}
-	
-	@starting-style {
-		dialog[open],
-		dialog[open]::backdrop {
-			opacity: 0;
-		}
-	}
-
-	svg {
-		width: 24px;
-		height: 24px;
-		max-width: 24px;
-		max-height: 24px;
-	}
-`
+	static styles = [style]
 
 	private getRevertTheme() {
 		return {
@@ -147,142 +128,70 @@ export class CustomComponent extends LitElement {
 			case 'fill':
 				return html`
 					<div
-					part="container"
-						style=${styleMap({
-							...this._theme,
-							...themeTransition,
-							position: 'relative',
-						})}
-					>
-					<div style=${styleMap(floatingStyle)}>
-				<button
-				part="random-button"
-				style=${styleMap({
-					...floatingStyle,
-					...fillButtonStyle,
-					...this.getRevertTheme(),
-				})}
-					@click=${() => this.handleRandomColor()}
-					>
-					<div style=${styleMap(centerStyle)} part="random-button-inner">
-					${unsafeSVG(randomIcon)}
-				</div>
-					</button>
+						part="container"
+						class="container transitions"
+						style=${styleMap(this._theme)}
+						>
+						<div class="floating" style=${styleMap({
+							display: this.noControl ? 'none' : 'block',
+						})}>
+							<button
+								part="random-button"
+								class="fill-box radius floating"
+								style=${styleMap(this.getRevertTheme())}
+								@click=${() => this.handleRandomColor()}
+								>
+								<div class="center" part="random-button-inner">
+									${unsafeSVG(randomIcon)}
+								</div>
+							</button>
+						</div>
+						<slot />
 					</div>
-					<slot />
-					</div>
-				`
+					`
 			case 'modal':
 				return html`
-				<button @click=${() => this.handleOpenDialog()}
-				
-				style=${styleMap({
-					...fillBoxButtonStyle,
-					...this._theme,
-				})}
-				>
-				<div style=${styleMap(centerStyle)}>
-					${unsafeSVG(bookIcon)}
-				</div>
-				</button>
-					<dialog id="target-dialog" part="target-dialog"
-					style=${styleMap({
-						...dialogStyle,
-						...this._theme,
-						...themeTransition,
-					})}>
-					${this.externalLinks.map(
-						(link) => html`<link rel="stylesheet" href=${link} />`,
-					)}
-						<div id="target-wrapper" part="target-wrapper" style=${styleMap({
-							...targetWrapperStyle,
-							...this._theme,
-							...themeTransition,
-						})}>
-						<div style=${styleMap(floatingStyle)}>
-						<button @click=${() => this.handleRandomColor()}
-						style=${styleMap({
-							...fillBoxButtonStyle,
-							...this.getRevertTheme(),
-						})}
+					<button @click=${() => this.handleOpenDialog()}
+						class="fill-box"
+						style=${styleMap(this._theme)}
 						>
-					<div style=${styleMap(centerStyle)}>
-					${unsafeSVG(randomIcon)}
-				</div>
-						</button>
-						<button
-						style=${styleMap({
-							...fillBoxButtonStyle,
-							...this.getRevertTheme(),
-						})}
-						@click=${() => this.handleCloseDialog()}>
-				<div style=${styleMap(centerStyle)}>
-				${unsafeSVG(closeBoxIcon)}
-			</div>
-			</button>
-			</div>
+						<div class="center">
+							${unsafeSVG(bookIcon)}
+						</div>
+					</button>
+					<dialog id="target-dialog" part="target-dialog"
+						class="transitions"
+						style=${styleMap(this._theme)}
+						>
+						${this.externalLinks.map(
+							(link) => html`<link rel="stylesheet" href=${link} />`,
+						)}
+						<div id="target-wrapper" part="target-wrapper"
+							class="transitions"
+							style=${styleMap(this._theme)}
+							>
+							<div  class="floating">
+								<button @click=${() => this.handleRandomColor()}
+									class="fill-box"
+									style=${styleMap(this.getRevertTheme())}
+									>
+									<div class="center">
+										${unsafeSVG(randomIcon)}
+									</div>
+								</button>
+								<button
+									class="fill-box"
+									style=${styleMap(this.getRevertTheme())}
+									@click=${() => this.handleCloseDialog()}
+									>
+									<div class="center">
+										${unsafeSVG(closeBoxIcon)}
+									</div>
+								</button>
+							</div>
 						</div>
 					</dialog>
-				`
+					`
 		}
 	}
-}
-
-const themeTransition = {
-	transition: 'color 200ms, background-color 200ms',
-}
-
-const dialogStyle = {
-	height: '100%',
-	maxHeight: '100%',
-	width: '100%',
-	maxWidth: '100%',
-	border: 'none',
-	margin: '0',
-	padding: '0',
-}
-
-const targetWrapperStyle = {
-	height: '100%',
-	width: '100%',
-}
-
-const floatingStyle = {
-	margin: '1rem',
-	position: 'absolute',
-	top: '0',
-	right: '0',
-}
-
-const centerStyle = {
-	display: 'flex',
-	justifyContent: 'center',
-	alignItems: 'center',
-	height: '45px',
-	width: '45px',
-	maxHeight: '45px',
-	maxWidth: '45px',
-}
-
-const fillButtonStyle = {
-	margin: '0',
-	padding: '0',
-	backgroundColor: 'transparent',
-	border: 'none',
-	cursor: 'pointer',
-	height: '45px',
-	width: '45px',
-	userSelect: 'none',
-	borderRadius: '50%',
-}
-
-const fillBoxButtonStyle = {
-	margin: '0',
-	padding: '0',
-	backgroundColor: 'transparent',
-	border: 'none',
-	cursor: 'pointer',
-	height: '45px',
-	width: '45px',
-	userSelect: 'none',
 }
