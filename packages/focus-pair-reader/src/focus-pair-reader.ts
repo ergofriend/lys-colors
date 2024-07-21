@@ -17,6 +17,10 @@ import style from './style'
 
 type Mode = 'fill' | 'modal'
 
+const targetWrapperId = 'target-wrapper'
+const targetDialogId = 'target-dialog'
+const defaultTargetQuerySelector = '#target-root'
+
 @customElement('focus-pair-reader')
 export class CustomComponent extends LitElement {
 	@property({ type: String, attribute: 'text-color' })
@@ -32,7 +36,7 @@ export class CustomComponent extends LitElement {
 	mode: Mode = 'fill'
 
 	@property()
-	target = 'target-root'
+	target = defaultTargetQuerySelector
 
 	// For fill mode only
 	@property({ type: 'Boolean', attribute: 'no-control' })
@@ -66,13 +70,13 @@ export class CustomComponent extends LitElement {
 			copied.setAttribute('part', 'target')
 
 			const dialogWrapper = this.shadowRoot?.getElementById(
-				'target-wrapper',
+				targetWrapperId,
 			) as HTMLDivElement
 			dialogWrapper.children.length <= 1 && dialogWrapper.appendChild(copied)
 		}
 
 		const dialog = this.shadowRoot?.getElementById(
-			'target-dialog',
+			targetDialogId,
 		) as HTMLDialogElement
 		dialog.showModal()
 		disableBodyScroll(dialog)
@@ -83,7 +87,7 @@ export class CustomComponent extends LitElement {
 
 	private handleCloseDialog() {
 		const dialog = this.shadowRoot?.getElementById(
-			'target-dialog',
+			targetDialogId,
 		) as HTMLDialogElement
 		dialog.close()
 		enableBodyScroll(dialog)
@@ -143,14 +147,14 @@ export class CustomComponent extends LitElement {
 							${unsafeSVG(bookIcon)}
 						</div>
 					</button>
-					<dialog id="target-dialog" part="target-dialog"
+					<dialog id="${targetDialogId}" part="${targetDialogId}"
 						class="transitions"
 						style=${styleMap(theme)}
 						>
 						${this.externalLinks.map(
 							(link) => html`<link rel="stylesheet" href=${link} />`,
 						)}
-						<div id="target-wrapper" part="target-wrapper"
+						<div id="${targetWrapperId}" part="${targetWrapperId}"
 							class="transitions"
 							style=${styleMap(theme)}
 							>
