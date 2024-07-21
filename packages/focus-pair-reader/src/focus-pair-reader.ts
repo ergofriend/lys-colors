@@ -19,10 +19,10 @@ type Mode = 'fill' | 'modal'
 
 @customElement('focus-pair-reader')
 export class CustomComponent extends LitElement {
-	@property()
+	@property({ type: String, attribute: 'text-color' })
 	textColor: string | undefined = undefined
 
-	@property()
+	@property({ type: String, attribute: 'background-color' })
 	backgroundColor: string | undefined = undefined
 
 	@property({ type: Number })
@@ -41,25 +41,6 @@ export class CustomComponent extends LitElement {
 	@property({ type: Array, attribute: 'external-link' })
 	externalLinks: string[] = []
 
-	@state()
-	private _theme = {
-		color: '',
-		backgroundColor: '',
-	}
-
-	constructor() {
-		super()
-		const color = generateRandomPairColor({
-			textColor: this.textColor,
-			backgroundColor: this.backgroundColor,
-			threshold: this.threshold,
-		})
-		this._theme = {
-			color: color.textColor,
-			backgroundColor: color.backgroundColor,
-		}
-	}
-
 	attributeChangedCallback(
 		name: string,
 		_old: string | null,
@@ -73,19 +54,8 @@ export class CustomComponent extends LitElement {
 
 	static styles = [style]
 
-	private getRevertTheme() {
-		return {
-			color: this._theme.backgroundColor,
-			backgroundColor: this._theme.color,
-		}
-	}
-
 	private handleRandomColor() {
-		const color = generateRandomPairColor()
-		this._theme = {
-			color: color.textColor,
-			backgroundColor: color.backgroundColor,
-		}
+		this.requestUpdate()
 	}
 
 	private handleOpenDialog() {
@@ -124,13 +94,27 @@ export class CustomComponent extends LitElement {
 	}
 
 	render() {
+		const color = generateRandomPairColor({
+			textColor: this.textColor,
+			backgroundColor: this.backgroundColor,
+			threshold: this.threshold,
+		})
+		const theme = {
+			color: color.textColor,
+			backgroundColor: color.backgroundColor,
+		}
+		const revertTheme = {
+			color: theme.backgroundColor,
+			backgroundColor: theme.color,
+		}
+
 		switch (this.mode) {
 			case 'fill':
 				return html`
 					<div
 						part="container"
 						class="container transitions"
-						style=${styleMap(this._theme)}
+						style=${styleMap(theme)}
 						>
 						<div class="floating" style=${styleMap({
 							display: this.noControl ? 'none' : 'block',
@@ -138,7 +122,7 @@ export class CustomComponent extends LitElement {
 							<button
 								part="random-button"
 								class="fill-box radius floating"
-								style=${styleMap(this.getRevertTheme())}
+								style=${styleMap(revertTheme)}
 								@click=${() => this.handleRandomColor()}
 								>
 								<div class="center" part="random-button-inner">
@@ -153,7 +137,7 @@ export class CustomComponent extends LitElement {
 				return html`
 					<button @click=${() => this.handleOpenDialog()}
 						class="fill-box"
-						style=${styleMap(this._theme)}
+						style=${styleMap(theme)}
 						>
 						<div class="center">
 							${unsafeSVG(bookIcon)}
@@ -161,19 +145,19 @@ export class CustomComponent extends LitElement {
 					</button>
 					<dialog id="target-dialog" part="target-dialog"
 						class="transitions"
-						style=${styleMap(this._theme)}
+						style=${styleMap(theme)}
 						>
 						${this.externalLinks.map(
 							(link) => html`<link rel="stylesheet" href=${link} />`,
 						)}
 						<div id="target-wrapper" part="target-wrapper"
 							class="transitions"
-							style=${styleMap(this._theme)}
+							style=${styleMap(theme)}
 							>
 							<div  class="floating">
 								<button @click=${() => this.handleRandomColor()}
 									class="fill-box"
-									style=${styleMap(this.getRevertTheme())}
+									style=${styleMap(revertTheme)}
 									>
 									<div class="center">
 										${unsafeSVG(randomIcon)}
@@ -181,7 +165,7 @@ export class CustomComponent extends LitElement {
 								</button>
 								<button
 									class="fill-box"
-									style=${styleMap(this.getRevertTheme())}
+									style=${styleMap(revertTheme)}
 									@click=${() => this.handleCloseDialog()}
 									>
 									<div class="center">
