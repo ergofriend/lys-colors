@@ -5,7 +5,7 @@ import {
 	enableBodyScroll,
 } from 'body-scroll-lock'
 import { LitElement, html } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
 import { styleMap } from 'lit/directives/style-map.js'
 import { unsafeSVG } from 'lit/directives/unsafe-svg.js'
 
