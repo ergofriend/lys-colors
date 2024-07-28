@@ -1,15 +1,25 @@
 ---
-import '@fontsource-variable/m-plus-1';
-import About from "../components/about.md";
-import RandomPairColors from "../components/random-pair-colors.md";
-import FocusPairReader from "../components/focus-pair-reader.astro";
+import '@fontsource-variable/m-plus-1'
+import About from '../components/about.md'
+import FocusPairReader from '../components/focus-pair-reader.astro'
+import RandomPairColors from '../components/random-pair-colors.md'
 ---
 <html>
   <head>
     <meta charset="UTF-8" />
-    <script type="module" src="https://unpkg.com/@ergofriend/focus-pair-reader"
-    ></script>
+    <script defer type="module" src="https://unpkg.com/@ergofriend/focus-pair-reader"></script>
     <link rel="stylesheet" href="/lys-colors/tacit-css.min.css" />
+    <meta property="og:title" content="lys-colors">
+    <meta property="og:description" content="Easy Computational Theming Library and Custom Element.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ergofriend.github.io/lys-colors/">
+    <meta property="og:image" content="https://ergofriend.github.io/lys-colors/og-slim.png">
+    <meta property="og:site_name" content="lys-colors">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="lys-colors" />
+    <meta name="twitter:description" content="Easy Computational Theming Library and Custom Element.">
+    <meta name="twitter:image" content="https://ergofriend.github.io/lys-colors/og-slim.png">
   </head>
   <body>
     <About />
